@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Champ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="starting-popup">
+      <h1>Guess Champ</h1>
+      <div class="popup-container">
+        <div><p>Set your game time: (1 - 60 minutes)</p></div>
+        <div>
+          <input id="time-setting" type="number" placeholder="1" />
+          <p>minute(s)</p>
+        </div>
+        <input type="button" id="start-btn" value="start" onclick="timer()" />
+      </div>
+      >
+      <div class="img"></div>
+    </div>
+
+    <div class="wrapper">
+      <div class="scoreboard">
+        <p id="timer"></p>
+        <p id="score"><span id="actual-score">0</span>/161</p>
+      </div>
+
+      <div class="input-bar">
+        <input 
+          type="text" 
+          id="champion-name" 
+          placeholder="Champion Name" 
+          autocomplete="off"
+          autofocus="" />
+        <input type="button" id="btn" value="guess" />
+      </div>
+
+      <div class="bgc"></div>
+
+      <main class="app-window">
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Aatrox_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Aatrox</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ahri_28.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ahri</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Akali_50.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Akali</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Akshan_1.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Akshan</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Alistar_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Alistar</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Amumu_17.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Amumu</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Anivia_27.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Anivia</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Annie_31.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Annie</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Aphelios_18.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Aphelios</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ashe_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ashe</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/AurelionSol_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Aurelion Sol</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Azir_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Azir</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Bard_8.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Bard</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Belveth_1.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Bel'Veth</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Blitzcrank_29.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Blitzcrank</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Brand_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Brand</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Braum_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Braum</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Caitlyn_30.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Caitlyn</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Camille_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Camille</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Cassiopeia_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Cassiopeia</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Chogath_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Cho'Gath</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Corki_4.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Corki</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Darius_4.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Darius</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Diana_25.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Diana</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/DrMundo_3.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Dr Mundo</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Draven_20.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Draven</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ekko_19.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ekko</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Elise_15.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Elise</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Evelynn_32.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Evelynn</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ezreal_21.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ezreal</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/FiddleSticks_27.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Fiddlesticks</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Fiora_50.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Fiora</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Fizz_3.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Fizz</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Galio_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Galio</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Gangplank_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Gangplank</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Garen_13.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Garen</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Gnar_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Gnar</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Gragas_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Gragas</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Graves_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Graves</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Gwen_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Gwen</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Hecarim_4.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Hecarim</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Heimerdinger_1.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Heimerdinger</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Illaoi_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Illaoi</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Irelia_18.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Irelia</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ivern_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ivern</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Janna_36.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Janna</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/JarvanIV_21.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Jarvan IV</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Jax_13.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Jax</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Jayce_15.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Jayce</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Jhin_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Jhin</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Jinx_37.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Jinx</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kaisa_0.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kai'Sa</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kalista_0.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kalista</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Karma_19.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Karma</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Karthus_17.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Karthus</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kassadin_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kassadin</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Katarina_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Katarina</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kayle_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kayle</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kayn_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kayn</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kennen_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kennen</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Khazix_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kha'Zix</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kindred_1.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kindred</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Kled_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Kled</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/KogMaw_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Mops'Maw</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Leblanc_12.webp"
+              alt="Champion" />
+          </div>
+          <div><p>LeBlanc</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/LeeSin_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Lee Sin</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Leona_22.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Leona</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Lillia_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Lillia</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Lissandra_23.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Lissandra</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Lucian_25.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Lucian</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Lulu_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Lulu</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Lux_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Lux</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Malphite_1.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Malphite</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Malzahar_18.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Malzahar</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Maokai_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Maokai</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/MasterYi_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Master Yi</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/MissFortune_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Miss Fortune</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Mordekaiser_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Mordekaiser</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Morgana_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Morgana</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Nami_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Nami</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Nasus_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Nasus</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Nautilus_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Nautilus</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Neeko_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Neeko</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Nidalee_29.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Nidalee</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Nilah_1.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Nilah</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Nocturne_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Nocturne</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Nunu_4.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Nunu & Willump</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Olaf_3.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Olaf</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Orianna_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Orianna</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ornn_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ornn</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Pantheon_36.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Pantheon</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Poppy_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Poppy</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Pyke_44.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Pyke</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Qiyana_20.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Qiyana</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Quinn_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Quinn</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Rakan_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Rakan</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Rammus_3.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Rammus</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/RekSai_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Rek'Sai</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Rell_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Rell</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Renata_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Renata Glasc</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Renekton_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Renekton</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Rengar_15.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Rengar</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Riven_16.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Riven</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Rumble_3.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Rumble</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ryze_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ryze</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Samira_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Samira</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Sejuani_26.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Sejuani</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Senna_16.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Senna</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Seraphine_14.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Seraphine</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Sett_38.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Sett</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Shaco_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Shaco</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Shen_40.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Shen</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Shyvana_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Shyvana</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Singed_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Singed</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Sion_22.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Sion</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Sivir_8.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Sivir</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Skarner_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Skarner</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Sona_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Sona</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Soraka_27.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Soraka</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Swain_12.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Swain</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Sylas_8.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Sylas</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Syndra_44.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Syndra</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/TahmKench_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Tahm Kench</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Taliyah_3.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Taliyah</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Talon_29.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Talon</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Taric_9.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Taric</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Teemo_8.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Teemo</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Thresh_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Thresh</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Tristana_51.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Tristana</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Trundle_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Trundle</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Tryndamere_18.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Tryndamere</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/TwistedFate_25.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Twisted Fate</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Twitch_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Twitch</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Udyr_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Udyr</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Urgot_15.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Urgot</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Varus_17.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Varus</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Vayne_12.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Vayne</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Veigar_41.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Veigar</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Velkoz_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Vel'Koz</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Vex_1.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Vex</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Vi_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Vi</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Viego_21.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Viego</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Viktor_14.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Viktor</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Vladimir_21.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Vladimir</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Volibear_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Volibear</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Warwick_35.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Warwick</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/MonkeyKing_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Wukong</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Xayah_28.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Xayah</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Xerath_5.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Xerath</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/XinZhao_36.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Xin Zhao</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Yasuo_55.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Yasuo</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Yone_26.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Yone</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Yorick_30.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Yorick</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Yuumi_37.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Yuumi</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Zac_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Zac</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Zed_11.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Zed</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Zeri_10.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Zeri</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Ziggs_24.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Ziggs</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Zilean_6.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Zilean</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Zoe_2.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Zoe</p></div>
+        </div>
+
+        <div class="champ-cover">
+          <div><p>?</p></div>
+          <div>
+            <img
+              src="https://lol-skin.weblog.vc/img/wallpaper/loading/Zyra_7.webp"
+              alt="Champion" />
+          </div>
+          <div><p>Zyra</p></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/timer.js"></script>
+  </body>
+</html>
